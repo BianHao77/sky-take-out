@@ -47,7 +47,7 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
             log.info("jwt校验:{}", token);
             Claims claims = JwtUtil.parseJWT(jwtProperties.getAdminSecretKey(), token);
             Long empId = Long.valueOf(claims.get(JwtClaimsConstant.EMP_ID).toString());
-            log.info("当前员工id：", empId);
+            log.info("当前员工id:{}", empId);
             // 设置当前线程局部变量的值
             // 之所以放在拦截器中，是因为这个值是多个接口都需要的，放在拦截器中，可以减少重复代码
             BaseContext.setCurrentId(empId);
