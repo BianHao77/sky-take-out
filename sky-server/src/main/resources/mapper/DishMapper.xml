@@ -40,6 +40,7 @@
         </set>
         where id = #{id}
     </update>
+
     <update id="startOrStop">
         update dish
         <set>
@@ -47,6 +48,7 @@
             <if test="updateTime != null">update_time = #{updateTime},</if>
             <if test="updateUser != null">update_user = #{updateUser},</if>
         </set>
+        where id = #{id}
     </update>
 
     <select id="list" resultType="Dish" parameterType="Dish">
