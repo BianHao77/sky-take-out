@@ -47,7 +47,7 @@ public class DishController {
         // 如果不存在，查询数据库，将查询到的数据放入redis中
         Dish dish = new Dish();
         dish.setCategoryId(categoryId);
-        dish.setStatus(StatusConstant.ENABLE);//查询起售中的菜品
+        dish.setStatus(StatusConstant.ENABLE);// 查询起售中的菜品
 
         list = dishService.listWithFlavor(dish);
         redisTemplate.opsForValue().set(key, list);
