@@ -2,6 +2,7 @@ package com.sky.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sky.constant.MessageConstant;
+import com.sky.context.BaseContext;
 import com.sky.dto.UserLoginDTO;
 import com.sky.entity.User;
 import com.sky.exception.LoginFailedException;
@@ -10,6 +11,7 @@ import com.sky.properties.WeChatProperties;
 import com.sky.service.UserService;
 import com.sky.utils.HttpClientUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.bridge.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,7 @@ import java.util.HashMap;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class UserServiceImpl implements UserService {
 
     // 微信服务接口地址
